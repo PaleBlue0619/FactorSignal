@@ -41,7 +41,7 @@ class Result(Source):
             colName = ["symbol","tradeDate","signal","period","indicator","value"]
             colType = ["SYMBOL","DATE","SYMBOL","INT","SYMBOL","DOUBLE"]
             self.session.run(f"""
-            db=database("{self.resultDBName}",RANGE,2010.01M+(0..30)*12,engine="OLAP")
+            db=database("{self.resultDBName}",RANGE,2010.01M..2030.01M,engine="OLAP")
             schemaTb=table(1:0,{colName}, {colType});
             t=db.createPartitionedTable(table=schemaTb, tableName="{self.resultTBName}", partitionColumns="tradeDate")
             """)  # DolphinDB 维度表 - 信号结果数据库

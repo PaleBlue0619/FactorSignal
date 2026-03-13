@@ -59,6 +59,6 @@ if __name__ == "__main__":
     session = ddb.session("localhost", 8848, "admin", "123456")
     with open(r"D:\DolphinDB\Project\FactorSignal\src\cons\signalCons.json5", "r", encoding="utf-8") as f:
         sigCfg = json5.load(f)
-    FactorSignal.run(cfg=sigCfg, signalList=None, dropDB=False)
+    FactorSignal.run(cfg=sigCfg, signalList=None, dropDB=True)
     # FactorSignal.givenPeriodAndSignalPlot(cfg=sigCfg)
     # FactorSignal.givenPeriodAndSymbolPlot(cfg=sigCfg)
